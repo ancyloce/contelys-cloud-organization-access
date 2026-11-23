@@ -32,3 +32,9 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+# Documents stay out of Git: the design, the decision records, the plans, the spec and the tickets
+# live only in the working copy and are backed up outside the repository
+# (CLAUDE.md of contelys-cloud, "Repository rules").
+/docs/
+/.scratch/
