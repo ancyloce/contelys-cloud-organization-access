@@ -1,0 +1,22 @@
+# Organization Access's external routes, which Edge publishes on the application hostname
+# (Edge's detailed design, section 03). Every path is a path of
+# contracts/openapi/organization-access/openapi.yaml: a prefix ending in /* stands for the
+# {organization} or {invitation} parameter that follows it there. Every route needs an
+# authenticated caller and belongs to the api traffic class.
+routes:
+  - paths: [/api/organization-access/v1/organizations]
+    methods: [GET, POST]
+    auth: required
+    traffic: api
+  - paths: [/api/organization-access/v1/organizations/*]
+    methods: [GET, POST, PUT, DELETE]
+    auth: required
+    traffic: api
+  - paths: [/api/organization-access/v1/invitations]
+    methods: [GET]
+    auth: required
+    traffic: api
+  - paths: [/api/organization-access/v1/invitations/*]
+    methods: [POST]
+    auth: required
+    traffic: api
